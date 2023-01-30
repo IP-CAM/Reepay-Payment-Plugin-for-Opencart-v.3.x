@@ -125,6 +125,7 @@ class ControllerExtensionPaymentReepayCheckout extends Controller {
             ['card'             => 'All available debit / credit cards',
              'dankort'          => 'Dankort',
              'visa'             => 'VISA',
+	     'anyday'		=> 'Anyday',
              'visa_elec'        => 'VISA Electron',
              'mc'               => 'MasterCard',
              'mobilepay'        => 'American Express',
