@@ -94,7 +94,7 @@ class ModelExtensionPaymentReepayCheckout extends Model {
 
     /**
      * Generate post parameters for
-     * creating charge session with Reepay api
+     * creating charge session with Billwerk+ Payments api
      *
      * @param bool $unique_invoice_handle
      * @return array
@@ -262,7 +262,7 @@ class ModelExtensionPaymentReepayCheckout extends Model {
     }
 
     /**
-     * Generate order items for request to Reepay api
+     * Generate order items for request to Billwerk+ Payments api
      * @return array
      */
     public function getOrderLines() {
