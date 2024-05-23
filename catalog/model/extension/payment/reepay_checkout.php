@@ -5,7 +5,8 @@ class ModelExtensionPaymentReepayCheckout extends Model {
     const CHARGE_SESSION_URL = 'https://checkout-api.reepay.com/v1/session/charge';
     const GET_INVOICE_URL    = 'https://api.reepay.com/v1/invoice/';
 
-    public function getMethod($address, $total) {
+    public function getMethod($address, $total)
+    {
 
         $this->load->language('extension/payment/reepay_checkout');
 
@@ -23,39 +24,22 @@ class ModelExtensionPaymentReepayCheckout extends Model {
 
         $method_data = array();
 
-        $method_title_settings = $this->config->get('payment_reepay_checkout_method_title');
-
-        $method_title = strlen($method_title_settings) > 3 ? $method_title_settings : $this->language->get('text_title');
-
-        $logos = '<br/>';
-
-        $style = 'height: 30px;
-                  width: auto;
-                  border-style: solid;
-                  border-width: 1px;
-                  border-radius: 4px;
-                  border-color: #f8f8f8;
-                  margin: 2px;';
-
-        $i = 0;
-
-        foreach( $this->config->get('payment_reepay_checkout_payment_logos') as $logo ) {
-            $i++;
-
-            $logos .= "<img src=\"catalog/view/theme/default/image/reepay/reepay_{$logo}.png\" height=\"32px\" style = \"". $style ."\"  width=\"93px\"  />";
-
-            if($i % 4 == 0) {
-                $logos .= "<br/>";
-            }
-        }
-
         if ($status) {
-            $method_data = array(
-                'code'       => 'reepay_checkout',
-                'title'      => $method_title,
-                'terms'      => $logos,
-                'sort_order' => $this->config->get('payment_reepay_checkout_sort_order')
-            );
+
+            $method_title_settings = $this->config->get('payment_reepay_checkout_method_title');
+
+            $method_title = strlen($method_title_settings) > 3 ? $method_title_settings : $this->language->get('text_title');
+
+            $logo_array = $this->config->get('payment_reepay_checkout_payment_logos');
+
+            if (is_array($logo_array)) {
+                $logos = $this->getLogos($logo_array);
+                $method_data['terms'] = $logos;
+            }
+
+            $method_data['code'] = 'reepay_checkout';
+            $method_data['title'] = $method_title;
+            $method_data['sort_order'] = $this->config->get('payment_reepay_checkout_sort_order');
         }
 
         return $method_data;
@@ -373,5 +357,35 @@ class ModelExtensionPaymentReepayCheckout extends Model {
                 $log = new Log('reepay_checkout.log');
                 $log->write($data);
         }
+    }
+
+    /**
+     * @param array $logo_array
+     * @return string
+     */
+    private function getLogos(array $logo_array)
+    {
+        $logos = '<br/>';
+
+        $style = 'height: 30px;
+                  width: auto;
+                  border-style: solid;
+                  border-width: 1px;
+                  border-radius: 4px;
+                  border-color: #f8f8f8;
+                  margin: 2px;';
+
+        $i = 0;
+
+        foreach ($logo_array as $logo) {
+            $i++;
+
+            $logos .= "<img src=\"catalog/view/theme/default/image/reepay/reepay_{$logo}.png\" height=\"32px\" style = \"" . $style . "\"  width=\"93px\"  />";
+
+            if ($i % 4 == 0) {
+                $logos .= "<br/>";
+            }
+        }
+        return $logos;
     }
 }
