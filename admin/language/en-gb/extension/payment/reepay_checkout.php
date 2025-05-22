@@ -1,14 +1,14 @@
 <?php
 
 // Heading
-$_['heading_title']					 = 'Billwerk+ Payments';
+$_['heading_title']					 = 'Frisbii Payments';
 
 // Text
 $_['text_extension']				 = 'Extensions';
 
-$_['text_reepay_checkout']			 = '<a target="_BLANK" href="https://reepay.com/"><img src="view/image/payment/reepay.png" alt="Billwerk+ Payments" title="Billwerk+ Payments" style="border: 1px solid #EEEEEE;width: 57px; height: 27px;" /></a>';
+$_['text_reepay_checkout']			 = '<a target="_BLANK" href="https://reepay.com/"><img src="view/image/payment/reepay.png" alt="Frisbii Payments" title="Frisbii Payments" style="border: 1px solid #EEEEEE;width: 57px; height: 27px;" /></a>';
 
-$_['text_success'] = 'Billwerk+ Payments settings has been saved';
+$_['text_success'] = 'Frisbii Payments settings has been saved';
 
 // Entry
 $_['entry_total']        = 'Total';
@@ -29,9 +29,9 @@ $_['entry_payment_logos'] = 'Payment logos';
 $_['entry_instant_settle'] = 'Instant settle';
 $_['entry_debug_mode_test'] = 'Debug';
 
-$_['heading_title_mobilepay'] = 'Billwerk+ Payments mobilepay';
+$_['heading_title_mobilepay'] = 'Frisbii Payments mobilepay';
 $_['entry_mobilepay_title'] = 'Method title';
-$_['text_reepay_order_detail_caption'] = 'Billwerk+ Payments Payment';
+$_['text_reepay_order_detail_caption'] = 'Frisbii Payments Payment';
 
 // Admin api actions
 $_['actions'] = 'Actions';

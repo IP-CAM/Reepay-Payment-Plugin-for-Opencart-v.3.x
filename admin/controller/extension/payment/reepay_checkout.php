@@ -166,7 +166,7 @@ class ControllerExtensionPaymentReepayCheckout extends Controller {
     }
 
     /**
-     * Preparing data for Order History [Billwerk+ Payments Tab]
+     * Preparing data for Order History [Frisbii Payments Tab]
      */
     public function control() {
 

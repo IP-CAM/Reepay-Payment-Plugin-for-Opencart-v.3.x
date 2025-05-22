@@ -1,7 +1,7 @@
 <?php
 
-$_['text_title_reepay_checkout'] = 'Billwerk+ Payments payment';
-$_['text_title_reepay_mobilepay'] = 'Billwerk+ Payments Mobilepay';
-$_['text_title_reepay_viabill'] = 'Billwerk+ Payments Viabill';
-$_['text_title_reepay_klarna_pay_now'] = 'Billwerk+ Payments Klarna Pay Now';
-$_['text_title_reepay_klarna_pay_later'] = 'Billwerk+ Payments Klarna Pay Later';
+$_['text_title_reepay_checkout'] = 'Frisbii Payments payment';
+$_['text_title_reepay_mobilepay'] = 'Frisbii Payments Mobilepay';
+$_['text_title_reepay_viabill'] = 'Frisbii Payments Viabill';
+$_['text_title_reepay_klarna_pay_now'] = 'Frisbii Payments Klarna Pay Now';
+$_['text_title_reepay_klarna_pay_later'] = 'Frisbii Payments Klarna Pay Later';

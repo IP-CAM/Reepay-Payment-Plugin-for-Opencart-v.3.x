@@ -78,7 +78,7 @@ class ModelExtensionPaymentReepayCheckout extends Model {
 
     /**
      * Generate post parameters for
-     * creating charge session with Billwerk+ Payments api
+     * creating charge session with Frisbii Payments api
      *
      * @param bool $unique_invoice_handle
      * @return array
@@ -246,7 +246,7 @@ class ModelExtensionPaymentReepayCheckout extends Model {
     }
 
     /**
-     * Generate order items for request to Billwerk+ Payments api
+     * Generate order items for request to Frisbii Payments api
      * @return array
      */
     public function getOrderLines() {
